@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Classes</title>
+	<style>
+	#first-name-red-color,#last-name-red-color{
+		color: red;
+		font-size: 20px;
+	}
+	</style>
+</head>
+<body>
+	<form> 
+		<input type="text" id="first_name" placeholder="Enter First Name..."/>
+		<br/>
+		<span id="first-name-red-color">
+
+		</span>
+		<br/>
+		<input type="text" id="last_name" placeholder="Enter Last Name..."/>
+		<br/>
+		<span id="last-name-red-color">
+
+		</span>
+		
+		<button id="btn" onclick="display();">Show</button>
+	</form>
+<script> 
+/*
+Class:
+is a map of building
+Object:
+Actual building of a room
+
+Data+functions
+
+*/
+
+function display()
+{
+	var first_name=document.getElementById("first_name").value;
+	var last_name=document.getElementById("last_name").value;
+	if(first_name=="")
+	{
+		document.getElementById("first-name-red-color").innerHTML="First name can not be empty.";
+
+	}
+	else if(last_name=="")
+	{
+		document.getElementById("last-name-red-color").innerHTML="Last name can not be empty.";
+	
+	}
+	else{
+		let khaqan=new Student(first_name,last_name);
+		khaqan.print();
+	}
+}
+class Student{
+	constructor(fname,lname)
+	{
+	this.first_name=fname;
+	this.last_name=lname;
+	}
+	print()
+	{
+		document.write("<br/>First Name:"+this.first_name);
+		document.write("<br/>Last Name:"+this.last_name);
+			
+	}
+
+
+}
+</script>
+
+</body>
+</html>
